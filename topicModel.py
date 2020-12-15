@@ -62,7 +62,6 @@ def topicModeling(df):
     test_tfidf = [id2word.doc2bow(text) for text in unseenText]
     for index in test_tfidf: #printing off predicitions of the topics
         sortprint = sorted(lda_model.get_document_topics(index),key=lambda x: x[1],reverse=True)
-        print("=====================")
         pprint(sortprint) # top down
     pass
 def tokenize(textData): #tokenizing the data
