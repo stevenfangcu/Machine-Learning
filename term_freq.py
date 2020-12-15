@@ -108,4 +108,3 @@ predictions = model.predict(text_features)
 for text, predicted in zip(texts, predictions):
     print('"{}"'.format(text))
     print(" - Predicted as: '{}'".format(id_to_category[predicted]))
-    print("")
