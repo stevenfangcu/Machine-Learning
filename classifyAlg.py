@@ -244,9 +244,6 @@ def logRegression(): # log regression works, worked on the other data set, but r
     terms_id_df = df1[['ClusterTerms','terms_id']].drop_duplicates().sort_values('terms_id')
     terms_to_id = dict(terms_id_df.values)
     id_to_category = dict(terms_id_df[['terms_id', 'ClusterTerms']].values)
-    print(terms_id_df)
-    print(terms_to_id)
-    print(id_to_category)
     tfidfReg = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2), stop_words='english')
     features = tfidfReg.fit_transform(df1['FullText']).toarray()
     labels = df1.terms_id
